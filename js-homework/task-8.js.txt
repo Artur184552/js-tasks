@@ -1,0 +1,9 @@
+let map = new Map();
+
+map.set(1, 'one');
+map.set(2, 'two');
+map.set(3, 'three');
+
+for (let name of map.keys()){
+    console.log(`Ключ - ${name}; значение - ${map.get(name)}`);
+}
