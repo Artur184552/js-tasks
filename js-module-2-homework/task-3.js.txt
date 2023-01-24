@@ -1,0 +1,45 @@
+function mainFunc(func, func2) {
+  console.log(result1);
+  
+  return console.log(result1 + result2);
+}
+
+
+
+function argFunc1(a) {
+  return a;
+}
+let result1 = argFunc1(10);
+
+
+
+function argFunc2(b) {
+  return b;
+}
+let result2 = argFunc2(5);
+
+
+
+mainFunc(argFunc1, argFunc2);
+
+
+
+
+
+/* Или так: 
+
+function sum(a = 10) {
+  console.log(a);
+  
+  return console.log(result);
+} 
+
+function res(a, b) {
+  return a + b;
+}
+
+let result = res(10, 5);
+
+sum();
+
+*/

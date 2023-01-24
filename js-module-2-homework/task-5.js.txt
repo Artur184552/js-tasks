@@ -1,0 +1,5 @@
+const getValue = (x, n) => {
+  console.log(Math.pow(x, n));
+}
+
+getValue(7, 3);

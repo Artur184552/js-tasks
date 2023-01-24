@@ -1,0 +1,10 @@
+function nums() {
+  let i;
+  if (i <= 1000) {
+    console.log(i);
+  } else {
+    console.log('Данные неверны');
+  }
+  }
+
+nums()
