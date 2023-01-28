@@ -1,0 +1,19 @@
+const mainObj = {
+  city: 'Moscow'
+}
+
+const person = Object.create(mainObj);
+
+person.name = 'Ivan'
+person.surname = 'Ivanov'
+person.age = 19
+
+function getInfo() {
+  for (let key in person) {
+    if (person.hasOwnProperty(key)) {
+      console.log(`${key}: ${person[key]}`)
+    }
+  }
+}
+
+getInfo();

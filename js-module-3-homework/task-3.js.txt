@@ -1,0 +1,9 @@
+function createObject() {
+	let testObject = {};
+	
+	return obj = testObject;
+  }
+
+  let object = createObject();
+  console.log((object));
+ 

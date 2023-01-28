@@ -1,0 +1,33 @@
+function ElectricalAppliance(name) {
+	this.device = 'household device',
+	this.name = name
+	
+}
+
+ElectricalAppliance.prototype.getPower = function (power, t, on) {
+	let turnOn = on;
+	if(on === true){
+		turnOn = 'Вкл';
+	}else{
+		turnOn = 'Выкл';
+	};
+	
+
+	console.log(`Расход эл. энергии ${this.name} за ${t} час = ${power * t}(В) ${this.name}: ${turnOn}`);
+};
+
+function Features(name, color) {
+	this.name = name,
+	this.color = color
+}
+
+Features.prototype = new ElectricalAppliance();
+
+const lamp = new Features ('Lamp', 'grey');
+const computer = new Features ('Computer', 'black');
+const teapot = new Features ('Teapot', 'white');
+
+console.log(lamp, computer, teapot);
+lamp.getPower(500, 1, false);
+computer.getPower(2300, 1, true);
+teapot.getPower(700, 1, true);

@@ -1,0 +1,16 @@
+const user = {
+  name: 'Ivan',
+  surname: 'Ivanov',
+  age: 19,
+} 
+
+
+function check(str, obj) {
+
+console.log(str in obj)
+  
+};
+
+check('Ivan', user);
+check('surname', user);
+check('age', user);
