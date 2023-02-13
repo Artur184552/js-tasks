@@ -1,0 +1,75 @@
+const btn = document.querySelector('.btn');
+const input1 = document.querySelector('.input1');
+const input2 = document.querySelector('.input2');
+const div = document.querySelector('div');
+
+function check(number) {
+    let apiData = false;
+
+    if (number >= 1 && number <= 10) {
+        apiData = true;
+    }
+  
+    return apiData;
+}
+
+
+
+function displayResult(apiData) {
+  let cards = ''
+  
+  apiData.forEach(item => {
+    const cardBlock = `
+    <div class='card'>
+    <img src='${item.download_url}' class='card-image'>
+    <p>${item.author}</p>
+    </div>
+    `;
+    
+    cards = cards + cardBlock;
+  });
+  
+  div.innerHTML = cards;
+};
+
+
+function readInput () {
+      let userPage = input1.value;
+    let userLimit = input2.value;
+
+    if (!check(userPage) && !check(userLimit)) {
+        div.innerHTML = 'Номер страницы и лимит вне диапазона от 1 до 10';
+    }
+    else if (!check(userPage)) {
+        div.innerHTML = 'Номер страницы вне диапазона от 1 до 10';
+    }
+    else if (!check(userLimit)) {
+        div.innerHTML = 'Лимит вне диапазона от 1 до 10';
+    }
+    else {
+        fetch(`https://picsum.photos/v2/list?page=${userPage}&limit=${userLimit}`)
+            .then((response) => {
+                const result = response.json();
+                return result;
+            })
+            .then((apiData) => {
+                displayResult(apiData);
+                savePhotosToLocalStorage();
+            })
+            .catch(() => { console.log('error') });
+    }
+}
+
+
+btn.addEventListener('click', readInput);
+
+function savePhotosToLocalStorage() {
+    localStorage.setItem("last_photos", div.innerHTML);
+}
+
+function loadPhotosFromLocalStorage() {
+    div.innerHTML = localStorage.getItem("last_photos");
+    return  div.innerHTML.length > 0;
+}
+
+window.addEventListener('load', loadPhotosFromLocalStorage);

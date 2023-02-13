@@ -1,0 +1,7 @@
+<input class="input1" placeholder="номер страницы">
+
+<input class="input2" placeholder="лимит">
+
+<button class="btn">запрос</button>
+
+<div>Здесь будет результат запроса</div>
