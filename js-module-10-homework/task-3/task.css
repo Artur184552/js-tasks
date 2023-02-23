@@ -1,0 +1,97 @@
+body {
+    background-color: rgb(164, 199, 230);
+}
+
+.main {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+#message-btn, #message-input, #geo-btn, .output-geo {
+    text-align: center;
+    background-color: rgb(164, 199, 230);
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    width: 150px;
+    height: 30px;
+    box-shadow: 0px 2px 8px 2px rgba(141,150,178,.3);
+}
+
+#message-btn, #geo-btn {
+    height: 36px;
+    margin-left: 10px;
+}
+
+.interact-part {
+    display: flex;
+    flex-direction: row;
+}
+
+#output {
+    margin-top: 10px;
+    width: 470px;
+    min-height: 200px;
+    height: max-content;
+    background-color: rgb(164, 199, 230);
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px 2px rgba(141,150,178,.3);
+}
+
+.message {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 8px 2px rgba(141,150,178,.3);
+    color: blue;
+}
+
+.response {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: green;
+}
+
+span {
+    color: rgb(161, 64, 0);
+}
+
+p {
+    box-shadow: 0px 2px 8px 2px rgba(1, 26, 255, 0.3);
+    width: max-content;
+}
+
+.geo-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.output-geo {
+    border: none;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(207, 83, 0)
+}
+
+#mapLink {
+    text-decoration: none;
+    color: rgb(207, 83, 0);
+}
